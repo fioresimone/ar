@@ -9,7 +9,7 @@ export default function App() {
     <>
       <ARButton />
       <Canvas>
-        <XR referenceSpace="unbounded">
+        <XR referenceSpace="viewer">
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
 
