@@ -9,12 +9,16 @@ export default function App() {
     <>
       <ARButton />
       <Canvas>
-        <XR referenceSpace="viewer">
+        <XR referenceSpace="local">
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
 
           <Suspense fallback={null}>
-            <Sphere position={[0, 0, 2]}>
+            <Sphere position={[-1.2, 0.5, 0]}>
+              <meshBasicMaterial color="cyan" wireframe />
+            </Sphere>
+
+            <Sphere position={[1.2, 0.5, 0]}>
               <meshBasicMaterial color="cyan" wireframe />
             </Sphere>
           </Suspense>
