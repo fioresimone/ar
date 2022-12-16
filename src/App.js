@@ -14,8 +14,8 @@ export default function App() {
           <pointLight position={[10, 10, 10]} />
 
           <Suspense fallback={null}>
-            <Sphere>
-              <meshBasicMaterial color="hotpink" />
+            <Sphere position={[0, 0, 2]}>
+              <meshBasicMaterial color="cyan" wireframe />
             </Sphere>
           </Suspense>
           <Controllers />
