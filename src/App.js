@@ -1,4 +1,31 @@
-import logo from './logo.svg';
+import React, { Suspense, useState } from "react";
+import { Interactive, XR, ARButton, Controllers } from "@react-three/xr";
+import { Sphere, Text } from "@react-three/drei";
+/* import "./styles.css"; */
+import { Canvas } from "@react-three/fiber";
+
+export default function App() {
+  return (
+    <>
+      <ARButton />
+      <Canvas>
+        <XR referenceSpace="local">
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+
+          <Suspense fallback={null}>
+            <Sphere>
+              <meshBasicMaterial color="hotpink" />
+            </Sphere>
+          </Suspense>
+          <Controllers />
+        </XR>
+      </Canvas>
+    </>
+  );
+}
+
+/* import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -23,3 +50,4 @@ function App() {
 }
 
 export default App;
+ */
