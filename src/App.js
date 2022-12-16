@@ -7,15 +7,17 @@ import Model from "./Moon";
 
 export default function App() {
   return (
-    <Canvas>
-      <ambientLight intensity={1} />
-      <Float>
-        <Model position={[0, 0, 1]} />
-      </Float>
-      {/* <Sphere position={[-1.2, 0.5, 0]}>
-        <meshBasicMaterial color="cyan" wireframe />
-      </Sphere> */}
-    </Canvas>
+    <>
+      <ARButton />
+      <Canvas>
+        <XR referenceSpace="local">
+          <ambientLight intensity={1} />
+          <Float>
+            <Model position={[0, 0, 1]} />
+          </Float>
+        </XR>
+      </Canvas>
+    </>
   );
 }
 
