@@ -1,25 +1,21 @@
 import React, { Suspense, useState } from "react";
 import { Interactive, XR, ARButton, Controllers } from "@react-three/xr";
-import { Sphere, Text } from "@react-three/drei";
-/* import "./styles.css"; */
+import { Float, Sphere, Text } from "@react-three/drei";
+import "./index.css";
 import { Canvas } from "@react-three/fiber";
-import { Moon } from "./Moon";
+import Model from "./Moon";
+
 export default function App() {
   return (
-    <>
-      <ARButton />
-      <Canvas>
-        <XR referenceSpace="local">
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-
-          <Suspense fallback={null}>
-            <Moon />
-          </Suspense>
-          <Controllers />
-        </XR>
-      </Canvas>
-    </>
+    <Canvas>
+      <ambientLight intensity={1} />
+      <Float>
+        <Model position={[0, 0, 1]} />
+      </Float>
+      {/* <Sphere position={[-1.2, 0.5, 0]}>
+        <meshBasicMaterial color="cyan" wireframe />
+      </Sphere> */}
+    </Canvas>
   );
 }
 
