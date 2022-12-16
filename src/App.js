@@ -3,7 +3,7 @@ import { Interactive, XR, ARButton, Controllers } from "@react-three/xr";
 import { Sphere, Text } from "@react-three/drei";
 /* import "./styles.css"; */
 import { Canvas } from "@react-three/fiber";
-
+import { Moon } from "./Moon";
 export default function App() {
   return (
     <>
@@ -14,13 +14,7 @@ export default function App() {
           <pointLight position={[10, 10, 10]} />
 
           <Suspense fallback={null}>
-            <Sphere position={[-1.2, 0.5, 0]}>
-              <meshBasicMaterial color="cyan" wireframe />
-            </Sphere>
-
-            <Sphere position={[1.2, 0.5, 0]}>
-              <meshBasicMaterial color="cyan" wireframe />
-            </Sphere>
+            <Moon />
           </Suspense>
           <Controllers />
         </XR>
