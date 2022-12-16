@@ -13,7 +13,7 @@ export default function App() {
         <XR referenceSpace="local">
           <ambientLight intensity={1} />
           <Float>
-            <Model position={[0, 0, 1]} />
+            <Model position={[0, 0, 1]} scale={0.3} />
           </Float>
         </XR>
       </Canvas>
